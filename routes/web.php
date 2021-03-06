@@ -28,3 +28,16 @@ Route::get('/nombres/{nombre1}/{apellidoP1}/{apellidoM1}/{edad1}/{nombre2}/{apel
 Route::get('/suma/{valor1}/{valor2}', function ($valor1,$valor2) {
     echo "La suma de los numeros $valor1 y $valor2 es : ".($valor1+$valor2)."";
 });
+//Metodo para mostrar a  10 usuarios
+Route::get('/mostrar', function () {
+$nombres = ["Luis","Tomas","Erika","Andres","Isai","Hector","Angel","Dante","Edgar","Mario","Roberto"];
+$apellidoP =["Reyes","Lobera","Santoyo","Paz","Juarez","Soto","Aguilera","Panini","Ortega","Martinez"];
+$correo=["Luis@gmail.com","Tomas@gmail.com","Erika@gmail.com","Andres@gmail.com","Isai@gmail.com","Hector@gmail.com","Angel@gmail.com","Dante@gmail.com","Edgar@gmail.com","Mario@gmail.com","Roberto@gmail.com"];
+$edad=["20","21","25","26","24","23","24","25","22","24",];
+//Este es el arreglo con la idea principal, aun esta en pruebas
+//$datos=[['nombres'=>"Luis","Tomas","Erika","Andres","Isai","Hector","Angel","Dante","Edgar","Mario","Roberto"],['apellidos'=>"Reyes","Lobera","Santoyo","Paz","Juarez","Soto","Aguilera","Panini","Ortega","Martinez"]];
+
+return view('usuarios',['nom'=>$nombres,'apellidos'=>$apellidoP,'correo'=>$correo,'edad'=>$edad]);
+});
+
+
