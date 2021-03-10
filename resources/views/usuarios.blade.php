@@ -35,8 +35,8 @@
             @for ($i = 0; $i < 10; $i++)
             <tr>
                  <td>{{$nom[$i]}}</td>
-                 <td>{{$apellidos[$i]}}</td>
-                 <td>{{$apellidos[$i]}}</td>
+                 <td>{{$apellidoP[$i]}}</td>
+                 <td>{{$apellidoM[$i]}}</td>
                  <td>{{$correo[$i]}}</td>
                  <td>{{$edad[$i]}}</td>
             </tr>

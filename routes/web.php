@@ -1,5 +1,7 @@
 <?php
-
+/*
+use App\Http\Controllers\TableroController;
+use App\Http\Controllers\UsuarioController;*/
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/*
+//Rutas tablero
+Route::resource('tablero', TableroController::class);
+
+Route::get('tablero', TableroController::class,'perro');
+
+//Rutas Usuario
+Route::resource('usuario', UsuarioController::class);
+
 //metodo para mostrar nombre/apellidoP/apellidoM/edad
 //el ejercicio menciono los datos de una persona pero nosostros al ser 2 quisimos agregar el de ambos
 Route::get('/nombres/{nombre1}/{apellidoP1}/{apellidoM1}/{edad1}/{nombre2}/{apellidoP2}/{apellidoM2}/{edad2}'
@@ -27,17 +38,18 @@ Route::get('/nombres/{nombre1}/{apellidoP1}/{apellidoM1}/{edad1}/{nombre2}/{apel
 //Metodo para la suma de 2 numeros
 Route::get('/suma/{valor1}/{valor2}', function ($valor1,$valor2) {
     echo "La suma de los numeros $valor1 y $valor2 es : ".($valor1+$valor2)."";
-});
+});*/
 //Metodo para mostrar a  10 usuarios
 Route::get('/mostrar', function () {
 $nombres = ["Luis","Tomas","Erika","Andres","Isai","Hector","Angel","Dante","Edgar","Mario","Roberto"];
-$apellidoP =["Reyes","Lobera","Santoyo","Paz","Juarez","Soto","Aguilera","Panini","Ortega","Martinez"];
+$apellidoP =["Reyes","Lobera","Santoyo","Paz","Perez","Soto","Aguilera","Panini","Ortega","Martinez"];
+$apellidoM =["Lopez","Aguilera","Santoyo","Casasola","Herrera","Antunes","Barrio","Lobera","Vazques","Soto"];
 $correo=["Luis@gmail.com","Tomas@gmail.com","Erika@gmail.com","Andres@gmail.com","Isai@gmail.com","Hector@gmail.com","Angel@gmail.com","Dante@gmail.com","Edgar@gmail.com","Mario@gmail.com","Roberto@gmail.com"];
 $edad=["20","21","25","26","24","23","24","25","22","24",];
 //Este es el arreglo con la idea principal, aun esta en pruebas
 //$datos=[['nombres'=>"Luis","Tomas","Erika","Andres","Isai","Hector","Angel","Dante","Edgar","Mario","Roberto"],['apellidos'=>"Reyes","Lobera","Santoyo","Paz","Juarez","Soto","Aguilera","Panini","Ortega","Martinez"]];
 
-return view('usuarios',['nom'=>$nombres,'apellidos'=>$apellidoP,'correo'=>$correo,'edad'=>$edad]);
+return view('usuarios',['nom'=>$nombres,'apellidoP'=>$apellidoP,'apellidoM'=>$apellidoM,'correo'=>$correo,'edad'=>$edad]);
 });
 
 
